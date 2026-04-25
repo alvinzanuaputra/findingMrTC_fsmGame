@@ -1,4 +1,4 @@
-﻿## File ini berisi opsi yang dapat di ubah untuk mengkustomisasi game mu.
+## File ini berisi opsi yang dapat di ubah untuk mengkustomisasi game mu.
 ##
 ## Baris yang di awali dengan dua 'tanda '#' adalah komentar, dan kamu tidak
 ## seharusnya menghapus nya. Baris dengan satu '#' adalah kode yang di
@@ -16,6 +16,17 @@
 
 
 define config.name = _("FindingMrTC")
+
+
+## Channel audio
+define config.has_music = True
+define config.has_sound = True
+define config.has_voice = False
+
+## Volume default
+define config.default_music_volume = 0.8
+define config.default_sfx_volume = 1.0
+
 
 
 ## Meng determinasikan apakah judul yang di berikan di atas di tampilkan di menu
@@ -48,10 +59,6 @@ define build.name = "FindingMrTC"
 ## Ketiga variabel ini mengontrol, antara lain, mixer mana yang ditampilkan
 ## kepada pemain secara default. Menetapkan salah satu dari variabel ini ke
 ## False akan menyembunyikan mixer yang sesuai.
-
-define config.has_sound = True
-define config.has_music = True
-define config.has_voice = True
 
 
 ## Untuk mengijinkan pengguna memainkan test suara di chanel suara atau musik,
@@ -219,3 +226,4 @@ init python:
 define config.screen_width = 1280
 define config.screen_height = 720
 define config.window = "auto"
+define config.gl_resize = True

@@ -1,18 +1,7 @@
-## Custom GUI overrides for visual polish.
-## This file is intended to override defaults in screens.rpy.
 init offset = 10
-
-## FIX: Ren'Py 8.5 tidak punya config.menu_select_sound.
-## Kita pakai hover_sound di style tombol (lihat di bawah).
-
-
-################################################################################
-## SAY SCREEN (CUSTOM TEXTBOX + NAMEBOX)
-################################################################################
 
 screen say(who, what):
     style_prefix "say"
-
     window:
         id "window"
         xalign 0.5
@@ -28,15 +17,12 @@ screen say(who, what):
 
         text what id "what"
 
-
 style window:
     xalign 0.5
     yalign 1.0
     xsize 1280
     ysize 220
-    # FIX: Kotak dialog semi-transparan.
     background Frame(Solid("#0D1B2ACC"), 0, 0)
-
 
 style namebox:
     xpos 75
@@ -46,20 +32,13 @@ style namebox:
     xpadding 20
     background Frame(Solid("#00B0FF33"), 10, 10)
 
-
 style say_dialogue:
     xpos 75
     xsize 1130
     ypos 25
     color "#E8EAF6"
     line_spacing 8
-    # FIX: Font dialog jangan kebesaran, pastikan muat di textbox.
     size 24
-
-
-################################################################################
-## CHOICE MENU POLISH
-################################################################################
 
 style choice_button:
     xalign 0.5
@@ -70,7 +49,10 @@ style choice_button:
     hover_background Frame(Solid("#283593CC"), 15, 15)
     selected_background Frame(Solid("#00B0FF44"), 15, 15)
     hover_sound "audio/sfx/select.mp3"
+    activate_sound "audio/sfx/select.mp3"
 
+style button:
+    activate_sound "audio/sfx/select.mp3"
 
 style choice_button_text:
     color "#E8EAF6"
@@ -79,15 +61,8 @@ style choice_button_text:
     xalign 0.5
     text_align 0.5
 
-
-################################################################################
-## MAIN MENU (CUSTOM)
-################################################################################
-
 screen main_menu():
     tag menu
-
-    # FIX: Background main menu fill layar.
     add im.Scale("images/places/lab_giga.jpg", 1280, 720)
     add Solid("#00000088")
 
@@ -131,6 +106,7 @@ style main_menu_button:
     background Frame(Solid("#0D1B2ACC"), 12, 12)
     hover_background Frame(Solid("#00B0FF55"), 12, 12)
     hover_sound "audio/sfx/select.mp3"
+    activate_sound "audio/sfx/select.mp3"
 
 
 style main_menu_button_text:
@@ -138,11 +114,6 @@ style main_menu_button_text:
     size 28
     color "#E8EAF6"
     hover_color "#FFFFFF"
-
-
-################################################################################
-## ENDING SCREEN (REUSABLE)
-################################################################################
 
 screen ending_screen(judul, warna, deskripsi):
     add Solid("#00000099")
@@ -176,8 +147,51 @@ screen ending_screen(judul, warna, deskripsi):
             textbutton "🚪 Keluar" action Quit() style "choice_button"
 
 style toggle_btn:
-    size 13
+    size 12
     color "#90CAF9"
     bold True
-    hover_color "#FFFFFF"
+    activate_sound "audio/sfx/select.mp3"
 
+transform minimap_slide_in:
+    xpos 1280 ypos -420 alpha 0.0
+    ease 0.55 xpos 996 ypos 12 alpha 1.0
+
+transform minimap_idle:
+    xpos 996 ypos 12 alpha 1.0
+
+transform map_rotated:
+    rotate 90
+
+transform map_shift:
+    xoffset -86
+    yoffset -46
+
+screen minimap_overlay():
+    zorder 5
+
+    frame:
+        at minimap_slide_in
+        xpos 996
+        ypos 12
+        xsize 272
+        ysize 390
+        background Frame(Solid("#0D1B2AEE"), 0, 0)
+        padding (4, 6, 4, 4)
+
+        vbox:
+            spacing 4
+            hbox:
+                spacing 6
+                xalign 0.1
+                text "🗺":
+                    size 16
+                    color "#00B0FF"
+                text "PETA KAMPUS":
+                    size 14
+                    bold True
+                    color "#00E5FF"
+                    font "DejaVuSans.ttf"
+            null height 2
+            add Solid("#00B0FF55") xsize 299 ysize 1
+            null height 2
+            add im.Scale("images/places/map.jpg", 345, 260) at map_rotated, map_shift

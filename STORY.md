@@ -8,7 +8,7 @@
 
 **Visual:** Layar laptop menampilkan *website* Siakad yang *loading* lama (Error 502 Bad Gateway). Di pojok kanan atas ada UI **Baterai Laptop 100% (5 Nyawa)**.
 
-![alt text](/game/data/screenshot/image.png)
+![alt text](/game/images/places/siakad_loading.jpg)
 
 **Narasi:** Pukul 14.00 WIB. Portal FRS ditutup satu jam lagi. **Masta** (Mahasiswa Semester Tiga) tertunduk lesu di selasar gedung. Hasil *war* SKS-nya hancur lebur; kelas Pak Irfan sudah ludes oleh kating. Jadwal Masta bolong 3 SKS.
 
@@ -20,7 +20,7 @@
 - **Masta:** *"Pak, mohon izin, saya Masta mau minta ACC kelas PBO Bapak..."*
 - **Bapak TC:** *"Kamu masukin kelas saya karena niat belajar, atau cuma karena SKS sisa? Saya tidak butuh mahasiswa mental tempe. Buktikan logika kamu jalan. Saya sudah menitipkan 'sesuatu' di Lab Alpro. Mulai dari sana, selesaikan masalah aslab di 7 lab, lalu temui saya di Lab GIGA."*
 
-![alt text](/game/data/screenshot/image-1.png)
+![alt text](/game/images/places/chatwa_bapaktc.jpg)
 
 ---
 
@@ -37,7 +37,7 @@ Masta lari ke Lab Alpro dengan napas tersengal. Aslab di sana sedang pusing mena
 ```
 [Jalan Maju] -> [Nabrak Tembok?] -> [Tetap Jalan Maju]  ← INI YANG SALAH
 ```
-![alt text](/game/data/screenshot/image-2.png)
+![alt text](/game/images/places/flowchart_blok_kode.jpg)
 
 | Jawaban | Respons | Efek |
 |---------|---------|------|
@@ -53,7 +53,7 @@ Masta menyerahkan file `.fig` tadi ke Kating RPL yang sedang menatap layar monit
 - **Masta:** *"Bang, tolong bukain file desain ini dong. Ini syarat ujian dari Bapak TC buat ACC FRS gua."*
 - **Kating RPL:** *"Bapak TC ngasih soal ujian pake format Figma? Absurd banget tuh dosen. Bisa gua bukain, tapi barter tenaga dulu, Ta. Dosen minta tombol 'Delete' ini direvisi. Harus kelihatan bahaya buat user, tapi warnanya harus tetep masuk tema Earth Tone aplikasi ini. Menurut lu yang mana?"*
 
-![alt text](/game/data/screenshot/image-3.png)
+![alt text](/game/images/places/terracota_tekateki.jpg)
 
 **🧩 Teka-teki:** Klik kotak warna **Terracotta** (bukan kuning stabilo atau merah neon).
 
@@ -75,7 +75,7 @@ Masta memberikan flashdisk ke Aslab Siber yang sedang santai di pojok lab.
 > **"PASSWORD = NAMA LAB INI (DIBALIK)"**
 > *(Masta melihat papan nama lab bertuliskan **NETICS**)*
 
-![alt text](/game/data/screenshot/image-4.png)
+![alt text](/game/images/places/mengetik_sciten.jpg)
 
 **🧩 Teka-teki:** Masta mengetik: `SCITEN`
 
@@ -95,7 +95,7 @@ Masta mendobrak Lab KBJ dan mendapati labnya kacau karena internet *down*. Aslab
 
 **🧩 Teka-teki:** Klik area **Kabel Power** pada gambar router untuk melakukan *hard reset*.
 
-![alt text](/game/data/screenshot/image-5.png)
+![alt text](/game/images/places/kabel_power_router.jpg)
 
 | Jawaban | Respons | Efek |
 |---------|---------|------|
@@ -113,7 +113,7 @@ Masta membawa foto buram itu ke Aslab KCV yang sedang memijat pelipisnya menatap
 
 **🧩 Teka-teki:** Klik **Foto Mahasiswa Gondrong** untuk ditambahkan ke *dataset*.
 
-![alt text](/game/data/screenshot/image-6.png)
+![alt text](/game/images/places/mahasiswa_gondrong_dataset.jpg)
 
 | Jawaban | Respons | Efek |
 |---------|---------|------|
@@ -129,7 +129,7 @@ Masta menunjukkan rumus deret tersebut ke aslab pemodelan yang sedang menulis di
 - **Masta:** *"Bang, gua dapet rumus ini dari rentetan file Bapak TC. Katanya lu bisa bantuin ngerjain ini?"*
 - **Aslab PKT:** *"Oh, deret Bapak TC? Khas beliau banget, pasti buat ngetes efisiensi. Ini deret buat nyari batas iterasi program supaya script-nya nggak TLE. Masta, biar lu pantes dapet snippet kodenya, coba lu lanjutin polanya: 2, 4, 8, 16... angka berikutnya berapa?"*
 
-![alt text](/game/data/screenshot/image-7.png)
+![alt text](/game/images/places/angka_32.jpg)
 
 **🧩 Teka-teki:** Pilih angka **32**.
 
@@ -156,7 +156,7 @@ Masta menghampiri Aslab MI yang sedang asyik mengatur *flow* n8n di komputernya.
 
 > *(Catatan desainer: buat gambar node WA dan CCTV)*
 
-![alt text](/game/data/screenshot/image-8.png)
+![alt text](/game/images/places/nodeWA_dan_cctv.jpg)
 
 | Jawaban | Respons | Efek |
 |---------|---------|------|
@@ -175,7 +175,7 @@ Masta mendobrak pintu Lab GIGA. Bapak TC sedang duduk tenang di depan PC spesifi
 **🧩 Teka-teki Final:**
 > *"Ada 10.000 data mahasiswa yang acak. Kamu butuh mencari satu nama spesifik. Mana pendekatan yang menunjukkan otak kamu pantas masuk kelas saya?"*
 
-![alt text](/game/data/screenshot/image-9.png)
+![alt text](/game/images/places/pilih_a_atau_b.jpg)
 
 | Pilihan | Deskripsi | Hasil |
 |---------|-----------|-------|
@@ -240,4 +240,4 @@ Masta mendobrak pintu Lab GIGA. Bapak TC sedang duduk tenang di depan PC spesifi
 
 *FSM — Game Design Document v1.0*
 
-![alt text](/game/data/screenshot/image-10.png)
+![alt text](/game/images/places/flowchart_blok_kode.jpg)

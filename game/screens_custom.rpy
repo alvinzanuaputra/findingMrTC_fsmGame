@@ -14,14 +14,12 @@ screen hud():
                 else:
                     text "□" color "#555555" size 18
 
-
 screen misi():
     frame:
         xalign 0.01
         yalign 0.02
         padding (12, 10)
         background Frame("gui/frame.png", 5, 5)
-
         vbox:
             spacing 4
             text "MISI AKTIF" size 16 bold True color "#ffcc02"

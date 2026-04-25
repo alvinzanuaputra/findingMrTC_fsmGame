@@ -11,21 +11,17 @@ screen game_hud():
             ypadding 10
             xminimum 170
             background Frame(Solid("#0D1B2AE0"), 10, 10)
-
             vbox:
                 spacing 3
-
                 text "📋 MISI":
                     size 13
                     color "#90CAF9"
                     bold True
-
                 null height 3
-
                 hbox:
                     spacing 6
                     text ("✅" if lab1_done else "○") size 13 color ("#00E676" if lab1_done else "#546E7A")
-                    text "Alpro" size 12 color ("#E0E0E0" if lab1_done else "#78909C")
+                    text "AlPRO" size 12 color ("#E0E0E0" if lab1_done else "#78909C")
                 hbox:
                     spacing 6
                     text ("✅" if lab2_done else "○") size 13 color ("#00E676" if lab2_done else "#546E7A")
@@ -33,7 +29,7 @@ screen game_hud():
                 hbox:
                     spacing 6
                     text ("✅" if lab3_done else "○") size 13 color ("#00E676" if lab3_done else "#546E7A")
-                    text "NETICS" size 12 color ("#E0E0E0" if lab3_done else "#78909C")
+                    text "NETICS (TKJ)" size 12 color ("#E0E0E0" if lab3_done else "#78909C")
                 hbox:
                     spacing 6
                     text ("✅" if lab4_done else "○") size 13 color ("#00E676" if lab4_done else "#546E7A")
@@ -54,47 +50,40 @@ screen game_hud():
                     spacing 6
                     text ("✅" if lab8_done else "○") size 13 color ("#FFD700" if lab8_done else "#546E7A")
                     text "GIGA ⭐" size 12 color ("#FFD700" if lab8_done else "#78909C")
-
                 null height 3
                 $ done_count = int(lab1_done)+int(lab2_done)+int(lab3_done)+int(lab4_done)+int(lab5_done)+int(lab6_done)+int(lab7_done)+int(lab8_done)
                 text "[done_count]/8 Selesai":
-                    size 11
-                    color "#546E7A"
-                    italic True
+                    size 11 color "#546E7A" italic True
 
-    textbutton ("<" if hud_misi_visible else ">"):
+    textbutton "['>' if hud_misi_visible else '<']":
         xalign 0.0
         yalign 0.0
         xoffset 188
         yoffset 20
-        xpadding 7
-        ypadding 4
-        background Solid("#1A237ECC")
-        hover_background Solid("#283593FF")
+        xpadding 6
+        ypadding 3
+        background Solid("#00000066")
         text_style "toggle_btn"
-        action ToggleVariable("hud_misi_visible")
+        action [ToggleVariable("hud_misi_visible")]
 
     if hud_nyawa_visible:
         frame:
             xalign 1.0
             yalign 0.0
-            xoffset -40
+            xoffset -32
             yoffset 18
             xpadding 12
             ypadding 10
             xminimum 160
             background Frame(Solid("#0D1B2AE0"), 10, 10)
-
             vbox:
                 spacing 4
                 xalign 1.0
-
                 text "NYAWA":
                     size 13
                     color "#90CAF9"
                     bold True
                     xalign 1.0
-
                 hbox:
                     spacing 3
                     xalign 1.0
@@ -110,41 +99,26 @@ screen game_hud():
                                 text "♥" color "#FF1744" size 20
                         else:
                             text "♡" color "#37474F" size 20
-
                 if nyawa == 5:
                     text "SEMPURNA ✨":
-                        size 11
-                        color "#00E676"
-                        xalign 1.0
-                        italic True
+                        size 11 color "#00E676" xalign 1.0 italic True
                 elif nyawa >= 3:
                     text "AMAN":
-                        size 11
-                        color "#69F0AE"
-                        xalign 1.0
-                        italic True
+                        size 11 color "#69F0AE" xalign 1.0 italic True
                 elif nyawa == 2:
                     text "⚠ HATI-HATI":
-                        size 11
-                        color "#FFEB3B"
-                        xalign 1.0
-                        italic True
+                        size 11 color "#FFEB3B" xalign 1.0 italic True
                 else:
                     text "🚨 KRITIS":
-                        size 11
-                        color "#FF1744"
-                        xalign 1.0
-                        italic True
+                        size 11 color "#FF1744" xalign 1.0 italic True
 
-    textbutton (">" if hud_nyawa_visible else "<"):
+    textbutton "['>' if hud_nyawa_visible else '<']":
         xalign 1.0
         yalign 0.0
-        xoffset -18
+        xoffset -10
         yoffset 20
-        xpadding 7
-        ypadding 4
-        background Solid("#1A237ECC")
-        hover_background Solid("#283593FF")
+        xpadding 6
+        ypadding 3
+        background Solid("#00000066")
         text_style "toggle_btn"
-        action ToggleVariable("hud_nyawa_visible")
-
+        action [ToggleVariable("hud_nyawa_visible")]
