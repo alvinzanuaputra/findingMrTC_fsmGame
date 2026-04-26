@@ -1,0 +1,6 @@
+define audio.bgm_santai = "audio/bgm/bgm_santai.ogg"
+define audio.bgm_ending = "audio/bgm/bgm_ending.ogg"
+define audio.sfx_correct = "audio/sfx/sfx_correct.ogg"
+define audio.sfx_wrong = "audio/sfx/sfx_wrong.ogg"
+define audio.sfx_click = "audio/sfx/sfx_click.ogg"
+define audio.sfx_phone = "audio/sfx/sfx_phone_ring.ogg"
