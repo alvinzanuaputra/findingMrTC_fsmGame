@@ -63,7 +63,7 @@ style choice_button_text:
 
 screen main_menu():
     tag menu
-    add im.Scale("images/places/lab_giga.jpg", 1280, 720)
+    add im.Scale("images/gui/background_game.jpg", 1280, 720)
     add Solid("#00000088")
 
     vbox:
@@ -97,6 +97,9 @@ screen main_menu():
             xalign 0.5
             style "main_menu_button"
 
+    text "Finite State Machine - College Education Game\nBased on materials by Imam Kuswardayan Developed by Alvinzp&Thalyatvp\nCopyright © 2026 All Rights Reserved":
+        style "main_menu_footer_text"
+
 
 style main_menu_button:
     xsize 320
@@ -114,6 +117,17 @@ style main_menu_button_text:
     size 28
     color "#E8EAF6"
     hover_color "#FFFFFF"
+
+style main_menu_footer_text:
+    xalign 0.5
+    yalign 1.0
+    yoffset -20
+    top_margin 16
+    text_align 0.5
+    xmaximum 980
+    size 14
+    color "#F5F5F5"
+    outlines [(2, "#000000CC", 0, 0)]
 
 screen ending_screen(judul, warna, deskripsi):
     add Solid("#00000099")

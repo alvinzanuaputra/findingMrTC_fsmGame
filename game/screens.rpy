@@ -10,10 +10,13 @@ style input:
 
 style hyperlink_text:
     properties gui.text_properties("hyperlink", accent=True)
+    color "#00CFFF"
+    hover_color "#FFFFFF"
     hover_underline True
 
 style gui_text:
     properties gui.text_properties("interface")
+    color "#FFFFFF"
 
 
 style button:
@@ -21,14 +24,19 @@ style button:
 
 style button_text is gui_text:
     properties gui.text_properties("button")
+    color "#FFFFFF"
+    hover_color "#00CFFF"
+    selected_color "#00CFFF"
     yalign 0.5
 
 
 style label_text is gui_text:
     properties gui.text_properties("label", accent=True)
+    color "#00CFFF"
 
 style prompt_text is gui_text:
     properties gui.text_properties("prompt")
+    color "#FFFFFF"
 
 
 style bar:
@@ -210,6 +218,8 @@ style quick_button:
 
 style quick_button_text:
     properties gui.text_properties("quick_button")
+    color "#FFFFFF"
+    hover_color "#00CFFF"
 
 screen navigation():
 
@@ -261,11 +271,14 @@ style navigation_button:
 
 style navigation_button_text:
     properties gui.text_properties("navigation_button")
+    color "#FFFFFF"
+    hover_color "#00CFFF"
+    selected_color "#00CFFF"
 
 screen main_menu():
     tag menu
 
-    add gui.main_menu_background
+    add im.Scale(gui.main_menu_background, config.screen_width, config.screen_height)
     frame:
         style "main_menu_frame"
     use navigation
@@ -303,21 +316,24 @@ style main_menu_vbox:
 
 style main_menu_text:
     properties gui.text_properties("main_menu", accent=True)
+    color "#FFFFFF"
 
 style main_menu_title:
     properties gui.text_properties("title")
+    color "#00CFFF"
 
 style main_menu_version:
     properties gui.text_properties("version")
+    color "#FFFFFF"
 
 screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
 
     style_prefix "game_menu"
 
     if main_menu:
-        add gui.main_menu_background
+        add im.Scale(gui.main_menu_background, config.screen_width, config.screen_height)
     else:
-        add gui.game_menu_background
+        add im.Scale(gui.game_menu_background, config.screen_width, config.screen_height)
 
     frame:
         style "game_menu_outer_frame"
@@ -396,16 +412,18 @@ style game_menu_outer_frame:
     bottom_padding 30
     top_padding 120
 
-    background "gui/overlay/game_menu.png"
+    background Solid("#00000066")
 
 style game_menu_navigation_frame:
     xsize 280
     yfill True
+    background Solid("#050A1477")
 
 style game_menu_content_frame:
     left_margin 40
     right_margin 20
     top_margin 10
+    background Solid("#050A1499")
 
 style game_menu_viewport:
     xsize 920
@@ -422,7 +440,7 @@ style game_menu_label:
 
 style game_menu_label_text:
     size 50
-    color gui.accent_color
+    color "#00CFFF"
     yalign 0.5
 
 style return_button:
@@ -455,6 +473,10 @@ style about_text is gui_text
 
 style about_label_text:
     size gui.label_text_size
+    color "#00CFFF"
+
+style about_text:
+    color "#FFFFFF"
 
 screen save():
 
@@ -571,6 +593,7 @@ style page_label:
 style page_label_text:
     textalign 0.5
     layout "subtitle"
+    color "#FFFFFF"
     hover_color gui.hover_color
 
 style page_button:
@@ -578,12 +601,16 @@ style page_button:
 
 style page_button_text:
     properties gui.text_properties("page_button")
+    color "#FFFFFF"
+    hover_color "#00CFFF"
 
 style slot_button:
     properties gui.button_properties("slot_button")
 
 style slot_button_text:
     properties gui.text_properties("slot_button")
+    color "#FFFFFF"
+    hover_color "#00CFFF"
 
 screen preferences():
 
@@ -695,6 +722,7 @@ style pref_label:
 
 style pref_label_text:
     yalign 1.0
+    color "#FFFFFF"
 
 style pref_vbox:
     xsize 225
@@ -708,6 +736,8 @@ style radio_button:
 
 style radio_button_text:
     properties gui.text_properties("radio_button")
+    color "#FFFFFF"
+    hover_color "#00CFFF"
 
 style check_vbox:
     spacing gui.pref_button_spacing
@@ -718,6 +748,8 @@ style check_button:
 
 style check_button_text:
     properties gui.text_properties("check_button")
+    color "#FFFFFF"
+    hover_color "#00CFFF"
 
 style slider_slider:
     xsize 350
@@ -729,6 +761,8 @@ style slider_button:
 
 style slider_button_text:
     properties gui.text_properties("slider_button")
+    color "#FFFFFF"
+    hover_color "#00CFFF"
 
 style slider_vbox:
     xsize 450
@@ -790,6 +824,7 @@ style history_name:
 style history_name_text:
     min_width gui.history_name_width
     textalign gui.history_name_xalign
+    color "#00CFFF"
 
 style history_text:
     xpos gui.history_text_xpos
@@ -799,12 +834,14 @@ style history_text:
     min_width gui.history_text_width
     textalign gui.history_text_xalign
     layout ("subtitle" if gui.history_text_xalign else "tex")
+    color "#FFFFFF"
 
 style history_label:
     xfill True
 
 style history_label_text:
     xalign 0.5
+    color "#FFFFFF"
 
 screen help():
 
@@ -950,6 +987,8 @@ style help_button:
 
 style help_button_text:
     properties gui.text_properties("help_button")
+    color "#FFFFFF"
+    hover_color "#00CFFF"
 
 style help_label:
     xsize 250
@@ -959,6 +998,10 @@ style help_label_text:
     size gui.text_size
     xalign 1.0
     textalign 1.0
+    color "#00CFFF"
+
+style help_text:
+    color "#FFFFFF"
 
 screen confirm(message, yes_action, no_action):
     modal True
@@ -967,7 +1010,7 @@ screen confirm(message, yes_action, no_action):
 
     style_prefix "confirm"
 
-    add "gui/overlay/confirm.png"
+    add Solid("#00000099")
 
     frame:
 
@@ -998,7 +1041,7 @@ style confirm_button is gui_medium_button
 style confirm_button_text is gui_medium_button_text
 
 style confirm_frame:
-    background Frame([ "gui/confirm_frame.png", "gui/frame.png"], gui.confirm_frame_borders, tile=gui.frame_tile)
+    background Frame(Solid("#0A0F1AE0"), 14, 14)
     padding gui.confirm_frame_borders.padding
     xalign .5
     yalign .5
@@ -1006,12 +1049,15 @@ style confirm_frame:
 style confirm_prompt_text:
     textalign 0.5
     layout "subtitle"
+    color "#FFFFFF"
 
 style confirm_button:
     properties gui.button_properties("confirm_button")
 
 style confirm_button_text:
     properties gui.text_properties("confirm_button")
+    color "#FFFFFF"
+    hover_color "#00CFFF"
 
 screen skip_indicator():
 
@@ -1316,7 +1362,7 @@ style main_menu_frame:
 
 style game_menu_outer_frame:
     variant "small"
-    background "gui/phone/overlay/game_menu.png"
+    background Solid("#00000066")
 
 style game_menu_navigation_frame:
     variant "small"

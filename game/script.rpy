@@ -68,6 +68,7 @@ define scale_char_kalab_mci = 1.0
 define scale_char_kalab_giga = 1.0
 define scale_char_kating = 1.0
 define scale_char_tc = 1.0
+define scale_char_bapak_tc = 0.70
 
 image maba normal = im.FactorScale("images/character/char_maba_normal.png", scale_char_maba)
 image char_maba_normal = im.FactorScale("images/character/char_maba_normal.png", scale_char_maba)
@@ -111,6 +112,7 @@ image char_kating_marah = im.FactorScale("images/character/char_kating_marah.png
 
 image tc senyum = im.FactorScale("images/character/char_tersenyum.png", scale_char_tc)
 image char_tersenyum = im.FactorScale("images/character/char_tersenyum.png", scale_char_tc)
+image char_bapak_tc = im.FactorScale("images/character/char_bapak_tc.png", scale_char_bapak_tc)
 
 define masta = Character("Masta", color="#4FC3F7")
 define tc = Character("Bapak TC", color="#EF5350")
@@ -246,10 +248,10 @@ label lab1_puzzle:
     $ renpy.image_size = (1280, 720)
 
     menu:
-        "Blok [[Tetap Jalan Maju]] - ini yang salah!":
-            jump lab1_benar
         "Blok [[Nabrak Tembok?]] - ini yang error":
             jump lab1_salah
+        "Blok [[Tetap Jalan Maju]] - ini yang salah!":
+            jump lab1_benar
         "Blok [[Jalan Maju]] - harusnya dihapus":
             jump lab1_salah
 
@@ -332,12 +334,12 @@ label lab2_puzzle:
     $ renpy.image_size = (1280, 720)
 
     menu:
-        "Terracotta (coklat kemerahan hangat)":
-            jump lab2_benar
         "Kuning Stabilo (neon terang)":
             jump lab2_salah
         "Merah Neon (bright red)":
             jump lab2_salah
+        "Terracotta (coklat kemerahan hangat)":
+            jump lab2_benar
 
 label lab2_benar:
     play sound "audio/sfx/sfx_correct.ogg"
@@ -420,10 +422,10 @@ label lab3_puzzle:
     $ renpy.image_size = (1280, 720)
 
     menu:
-        "Ketik: SCITEN":
-            jump lab3_benar
         "Ketik: NETICS":
             jump lab3_salah
+        "Ketik: SCITEN":
+            jump lab3_benar
         "Ketik: CITEN":
             jump lab3_salah
 
@@ -506,12 +508,12 @@ label lab4_puzzle:
     $ renpy.image_size = (1280, 720)
 
     menu:
-        "Cabut dan colok ulang kabel power (hard reset)":
-            jump lab4_benar
         "Tarik antena routernya":
             jump lab4_salah
         "Reset via tombol admin web browser":
             jump lab4_salah
+        "Cabut dan colok ulang kabel power (hard reset)":
+            jump lab4_benar
 
 label lab4_benar:
     play sound "audio/sfx/sfx_correct.ogg"
@@ -678,10 +680,10 @@ label lab6_puzzle:
     $ renpy.image_size = (1280, 720)
 
     menu:
-        "32":
-            jump lab6_benar
         "24":
             jump lab6_salah
+        "32":
+            jump lab6_benar
         "18":
             jump lab6_salah
 
@@ -764,10 +766,10 @@ label lab7_puzzle:
     $ renpy.image_size = (1280, 720)
 
     menu:
-        "CCTV Rekam Wajah dulu, baru Kirim Notif WA":
-            jump lab7_benar
         "Kirim Notif WA dulu, baru CCTV Rekam":
             jump lab7_salah
+        "CCTV Rekam Wajah dulu, baru Kirim Notif WA":
+            jump lab7_benar
 
 label lab7_benar:
     play sound "audio/sfx/sfx_correct.ogg"
@@ -814,6 +816,7 @@ label lab8_giga:
     hide char_kalab_pkt
     hide char_kalab_mci
     hide char_kalab_giga
+    hide char_bapak_tc
 
     play sound "audio/sfx/open_door.mp3"
     pause 0.5
@@ -823,15 +826,15 @@ label lab8_giga:
     show char_maba_takut at enter_left
     play sound "audio/sfx/gulp.wav"
     pause 0.35
-    show char_kalab_giga at enter_right
+    show char_bapak_tc at enter_right
     play sound "audio/sfx/gulp.wav"
     pause 0.25
 
     show char_maba_takut at active_speak
-    show char_kalab_giga at idle_dim
+    show char_bapak_tc at idle_dim
     masta "Pak... Bapak TC... Ini snippet kode solusi yang Bapak minta. Saya sudah menyelesaikan ujian dari 7 lab."
     pause 1.2
-    show char_kalab_giga at idle_bright
+    show char_bapak_tc at idle_bright
     show char_maba_takut at idle_dim
     tc "Tepat waktu, Masta. Kamu berhasil memecahkan rantai ujian itu. Tapi di kelas saya, solusi yang asal jalan tapi lambat itu sampah. Sama saja dengan TLE. Pertanyaan terakhir."
     tc "Ada 10.000 data mahasiswa acak. Kamu butuh mencari satu nama spesifik. Mana pendekatan yang pantas masuk kelas saya?"
@@ -841,9 +844,9 @@ label lab8_puzzle:
     show char_maba_takut at exit_left
     pause 0.2
     hide char_maba_takut
-    show char_kalab_giga at exit_right
+    show char_bapak_tc at exit_right
     pause 0.2
-    hide char_kalab_giga
+    hide char_bapak_tc
 
     scene black
     show bg pilih_a_atau_b as puzzle_bg:
@@ -854,10 +857,10 @@ label lab8_puzzle:
     $ renpy.image_size = (1280, 720)
 
     menu:
-        "A - Urutkan dulu (Sorting), lalu cari dengan Binary Search":
-            jump lab8_benar
-        "B - Cek satu per satu dari atas ke bawah (Linear Search)":
+        "Cek satu per satu dari atas ke bawah (Linear Search)":
             jump lab8_salah_instant
+        "Urutkan dulu (Sorting), lalu cari dengan Binary Search":
+            jump lab8_benar
 
 label lab8_benar:
     play sound "audio/sfx/sfx_correct.ogg"
@@ -873,8 +876,8 @@ label lab8_benar:
 label lab8_salah_instant:
     play sound "audio/sfx/sfx_wrong.ogg"
     with hpunch
-    show char_kalab_giga at pos_right
-    show char_kalab_giga at char_shake
+    show char_bapak_tc at pos_right
+    show char_bapak_tc at char_shake
     tc "Pola pikir kuli. Kamu tidak cocok jadi Engineer. Keluar dari lab saya."
     jump ending_tle
 
@@ -882,7 +885,7 @@ label ending_a_or_d:
     # FIX: Pastikan musik berhenti sebelum ending.
     $ renpy.music.stop()
     scene bg lab_giga with trans_fade_slow
-    show char_kalab_giga at right with trans_dissolve_fast
+    show char_bapak_tc at right with trans_dissolve_fast
     show char_maba_senang at left with trans_dissolve_fast
 
     play sound "audio/sfx/select.mp3"
@@ -903,7 +906,7 @@ label ending_chosen_one:
     # FIX: Pastikan musik berhenti sebelum ending.
     $ renpy.music.stop()
     scene bg lab_giga with trans_fade_slow
-    show char_kalab_giga at right with trans_dissolve_fast
+    show char_bapak_tc at right with trans_dissolve_fast
     show char_maba_senang at left with trans_dissolve_fast
 
     "Bapak TC tersenyum tipis. Sebuah pemandangan langka."
